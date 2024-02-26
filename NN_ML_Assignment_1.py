@@ -24,7 +24,7 @@ st.set_page_config(layout="wide")
 # tab 2: Correlation plot, chloropeth map, any other insight related graph, show outliers
 # tab 3: Scikit learn model
 
-tab1, tab2, tab3, tab4, tab5,tab6,tab7  = st.tabs(["Feature Importance","Features","Correlation Matrix", "Key Feature","KNN", "Prediction Model","remarks"])
+tab1, tab2, tab3, tab4, tab5,tab6,tab7,tab8 = st.tabs(["Feature Importance","Features","Correlation Matrix", "Key Feature","KNN", "Prediction Model","remarks", decision])
 
 with tab1:
     sns.set_palette(sns.color_palette("Dark2", 8))
