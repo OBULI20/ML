@@ -1,0 +1,37 @@
+import os
+import base64
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+import plotly.graph_objects as go
+import plotly.express as pximport 
+
+df_adult_new= pd.read_excel('Cleaned_Census_Data.xlsx')
+
+st.set_page_config(layout="wide")
+
+plt.figure(figsize=(12, 4))
+sns.boxplot(x='workclass', y='age', hue='workclass', data=df_adult_new, palette='Set3')
+st.pyplot(plt.gcf())
+
+# tab 1: EDA summary-2-3 graphs
+# tab 2: Correlation plot, chloropeth map, any other insight related graph, show outliers
+# tab 3: Scikit learn model
+
+sns.catplot(y='sex',hue='income',data=df,kind="count")
+
+sns.catplot(y='education',hue='income',data=df,kind="count")
+
+sns.catplot(y='occupation',hue='income',data=df,kind="count")
+
+ax = sns.countplot(df, y = 'marital-status')
+ax.bar_label(ax.containers[0])
+
+race_count= df['race'].value_counts()
+fig = plt.figure(figsize=(6, 7))
+plt.pie(race_count, labels=race_count.index, autopct ='%.2f%%')
+plt.show()
+
+df.hist('age', bins= 20, color= 'beige', edgecolor='black')
